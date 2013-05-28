@@ -3,7 +3,7 @@ Matrix Multiplication: Comparison of Strassen, Winograd, and Naive Algorithms
 By: David Boone, Kenny Lei, George Lok, Varun Sriram
 
 Overview
-========
+--------
 We implemented the above 3 algorithms in the language of C, upon CS51 Professor Greg Morrisett's recommendation. The naive algorithm is what we call regular multiplication – it runs in O(n^3) time. Winograd algorithm is a slight improvement from this naive algorithm – it performs less multiplication operations, by performing a preprocessing step that calculates approximately half of what is necessary before actual multiplication occurs. It is also O(n^3), but is supposedly faster in real-time. One goal of this project was to determine if this is really true. (Our initial/technical specs have further detail). Finally, Strassen algorithm is considered the second fastest multiplication algorithm in term of complexity – it runs in O(n^2.8074) time, in exchange for more use of memory – each matrix must have dimensions that are powers of 2 (hence, the need for padding of most matrices). Strassen supposedly runs faster, and part of the goal of this project was to determine at what point that is for what matrix size Strassen actually outperforms Winograd and regular naive multiplication.
 
 Since our goal was to measure up how the algorithms performed against one another, we implemented a method that will initialize matrices with random values, that can be adjusted for different bounds. This way, we can focus on measuring the accuracy and time each algorithm takes. We also have the entries of our matrices be bignum structures, and thus, reached one of our extensions.
@@ -13,7 +13,7 @@ Current Subdirectory (.) ::
   Note that these files contain our bignums extension and 3 algorithms - Winograd's, Strassen's, and naive "regular" multiplication.
   
 Instructions
-============
+------------
 1. Run "make" to compile everything
 2. Run "./regular" for naive multiplication with bignums.
 3. Run "./winograd" for Winograd multiplication algorithm with bignums.
